@@ -24,11 +24,8 @@ const magicBook = {
       material: 'metal',
       ingridients: {
         addIngridientToKettle(nameOfIngridient, amount) {
-          let prop;
-          for (prop in this) {
             prop = nameOfIngridient;
             this[prop] = amount;
-          }
           for (let key in kitchen) {
             if (key === prop)
               kitchen[key] = kitchen[key] - amount;
@@ -46,9 +43,10 @@ const magicBook = {
     }
   };
   
-  kitchen.kettle.ingridients.addIngridientToKettle("bone", 15);
+  kitchen.kettle.ingridients.addIngridientToKettle("bone", 9);
   kitchen.kettle.ingridients.addIngridientToKettle("stone", 100);
   kitchen.kettle.ingridients.addIngridientToKettle("nail", 100);
   kitchen.kettle.ingridients.addIngridientToKettle("poo", 53);
-  
+  kitchen.kettle.ingridients.addIngridientToKettle("kuskus", 53);
+
   kitchen.kettle.ingridients.cook(magicBook.recipes.golem);
